@@ -24,9 +24,9 @@ ScribeFlow is a web application that allows users to transcribe audio files and 
 - **Real-time Feedback**: Shows real-time progress and status updates during transcription and translation.
 - **Clipboard & Download**: Easily copy the results to your clipboard or download them as a text file.
 
-## Demo
+## Deployment
 
-Check out the live demo [https://scribeflow.vercel.app/](#).
+Check out the app here [https://scribeflow.vercel.app/](#).
 
 ## Getting Started
 
@@ -45,7 +45,7 @@ Ensure you have the following installed:
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/yourusername/scribeflow.git
+    git clone https://github.com/ezstefan/scribeflow.git
     cd scribeflow
     ```
 
@@ -65,7 +65,7 @@ Ensure you have the following installed:
     yarn dev
     ```
 
-    The application will be available at `http://localhost:3000`.
+    The application will be available at `http://localhost:5173`.
 
 ### Usage
 
@@ -113,5 +113,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - **React** and **Vite** for providing the framework for the web application
 
 ---
-
-Feel free to customize this `README.md` as per your project's specific needs and details.
