@@ -26,7 +26,7 @@ ScribeFlow is a web application that allows users to transcribe audio files and 
 
 ## Demo
 
-Check out the live demo [here](#https://scribeflow.vercel.app/).
+Check out the live demo [[here](https://scribeflow.vercel.app/)](#).
 
 ## Getting Started
 
