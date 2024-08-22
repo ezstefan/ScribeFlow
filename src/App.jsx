@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from 'react'
 import HomePage from './components/HomePage'
 import Header from './components/Header'
 import FileDisplay from './components/FileDisplay'
-import Information from './components/Information'
 import Transcribing from './components/Transcribing'
+import Information from './components/Information'
 import { MessageTypes } from './utils/presets'
 
 function App() {
@@ -17,9 +17,11 @@ function App() {
   const isAudioAvailable = file || audioStream
 
   function handleAudioReset() {
+
     setFile(null)
     setAudioStream(null)
   }
+
 
   const worker = useRef(null)
 
@@ -43,22 +45,26 @@ function App() {
         case 'RESULT':
           setOutput(e.data.results)
           console.log(e.data.results)
-          break;
+          break; 
         case 'INFERENCE_DONE':
           setFinished(true)
           console.log("DONE")
-          break;
+          break; 
       }
     }
 
-    worker.current.addEventListener('message', onMessageReceived)
+    worker.current.addEventListener('message',
+      onMessageReceived)
 
-    return () => worker.current.removeEventListener('message', onMessageReceived)
+      return () => worker.current.removeEventListener('message', onMessageReceived)
+
+    
+
   })
 
   async function readAudioFrom(file) {
     const sampling_rate = 16000
-    const audioCTX = new AudioContext({ sampleRate: sampling_rate })
+    const audioCTX = new AudioContext({sampleRate: sampling_rate})
     const response = await file.arrayBuffer()
     const decoded = await audioCTX.decodeAudioData(response)
     const audio = decoded.getChannelData(0)
@@ -78,19 +84,26 @@ function App() {
     })
   }
 
+
+
+
   return (
     <div className='flex flex-col max-w-[1000px] mx-auto w-full'>
+      
       <section className='min-h-screen flex flex-col'>
-        <Header />
-        {output ? (
-          <Information output={output} finished={finished}/>
-        ) : loading ? (
-          <Transcribing />
-        ) : isAudioAvailable ? (
-          <FileDisplay handleFormSubmission={handleFormSubmission} handleAudioReset={handleAudioReset} file={file} audioStream={audioStream} />
-        ) : (
-          <HomePage setFile={setFile} setAudioStream={setAudioStream} />
-        )}
+      <Header /> 
+      {output ? (
+        <Information output={output}/>
+      ) : loading ? (
+        <Transcribing/>
+      ): isAudioAvailable ? (
+        <FileDisplay handleFormSubmission={handleFormSubmission} handleAudioReset={handleAudioReset} file={file} audioStream={setAudioStream} />
+
+      ): (
+        <HomePage setFile={setFile} setAudioStream={setAudioStream} />
+
+  )}
+       
       </section>
       <footer></footer>
     </div>
@@ -98,3 +111,5 @@ function App() {
 }
 
 export default App
+
+
