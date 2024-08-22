@@ -66,6 +66,7 @@ export default function HomePage(props){
         }, 1000)
 
         return () => clearInterval(interval)
+    
     })
 
     return (

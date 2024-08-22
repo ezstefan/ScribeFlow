@@ -18,6 +18,7 @@ export default function Information(props) {
             worker.current = new Worker(new URL('../utils/translate.worker.js', import.meta.url), {
               type: 'module'
             })
+            
           }
 
           const onMessageReceived = async (e) => {

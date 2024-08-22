@@ -17,6 +17,7 @@ class MyTranslationPipeline {
 self.addEventListener('message', async (event) => {
     let translator = await MyTranslationPipeline.getInstance(x => {
         self.postMessage(x)
+        
     })
     console.log(event.data)
     let output = await translator(event.data.text, {

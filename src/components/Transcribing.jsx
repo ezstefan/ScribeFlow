@@ -4,6 +4,7 @@ export default function Transcribing(props) {
     const { downloading } = props
 
 
+    
     return (
         <div className='flex items-center flex-1 flex-col justify-center gap-10 md:gap-14 text-center pb-24 p-4'>
             <div className='flex flex-col gap-2 sm:gap-4'>

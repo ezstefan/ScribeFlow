@@ -6,4 +6,5 @@ export default function Transcription(props){
     return (
         <div>{textElement}</div>
     )
+
 }
