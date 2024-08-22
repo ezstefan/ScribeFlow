@@ -7,6 +7,7 @@ import Information from './components/Information'
 import { MessageTypes } from './utils/presets'
 
 function App() {
+  
   const [file, setFile] = useState(null)
   const [audioStream, setAudioStream] = useState(null)
   const [output, setOutput] = useState(null)
